@@ -1,38 +1,34 @@
 #nerve
 [![Build Status](https://travis-ci.org/solarkennedy/puppet-nerve.png)](https://travis-ci.org/solarkennedy/puppet-nerve)
 
-####Table of Contents
-
-1. [Overview](#overview)
-2. [Module Description - What the module does and why it is useful](#module-description)
-3. [Setup - The basics of getting started with [Modulename]](#setup)
-    * [What [Modulename] affects](#what-[modulename]-affects)
-    * [Setup requirements](#setup-requirements)
-    * [Beginning with [Modulename]](#beginning-with-[Modulename])
-4. [Usage - Configuration options and additional functionality](#usage)
-5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
-5. [Limitations - OS compatibility, etc.](#limitations)
-6. [Development - Guide for contributing to the module](#development)
-
 ##Overview
 
-A one-maybe-two sentence summary of what the module does/what problem it solves. This is your 30 second elevator pitch for your module. Consider including OS/Puppet version it works with.       
+This puppet module installs and configures [Nerve](https://github.com/airbnb/nerve) as part of Airbnb's [SmartStack](http://nerds.airbnb.com/smartstack-service-discovery-cloud/)
+
+It allows you to dynamically register services in Zookeeper. See also [Puppet-Synapse](https://github.com/solarkennedy/puppet-synapse) to configure the [Synapse](https://github.com/airbnb/synapse) side of SmartStack: a local HAproxy that allows your services to find other services registered in zookeeper, by only needing to connect to localhost.
 
 ##Installation
 
-###What [Modulename] affects
-
-* A list of files, packages, services, or operations that the module will alter, impact, or execute on the system it's installed on.
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form. 
+    puppet module install KyleAnderson/nerve
+    # Or librarian-puppet, r10k, whatever
 
 ##Usage
 
-Put the classes, types, and resources for customizing, configuring, and doing the fancy stuff with your module here. 
+Default settings ensure present, and use system packages:
+
+    include nerve
+
+Use gem install:
+ 
+    class { 'nerve': 
+      package_provider => 'gem'
+    }
 
 ##Limitations
 
-This is where you list OS compatibility, version compatibility, etc.
+The OS support assumes that rubygem-nerve is available or `gem install nerve` is functioning. (depending on the provider you specify)
+
+TODO: Init scripts stuff
 
 ##Development
 Open an [issue](https://github.com/solarkennedy/puppet-nerve/issues) or 
