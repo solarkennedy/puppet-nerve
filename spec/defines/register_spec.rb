@@ -23,7 +23,7 @@ describe 'nerve::register', :type => :define do
     }}
     it { should contain_file('/etc/nerve/conf.d/example_service.json').with(
       :ensure => 'present',
-      :mode   => '0444',
+      :mode   => '0444'
     ) }
     it { should contain_file('/etc/nerve/conf.d/example_service.json').with_content(/"port": 9000/) }
     it { should contain_file('/etc/nerve/conf.d/example_service.json').with_content(/"host": "4\.2\.2\.2",/) }
