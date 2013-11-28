@@ -3,7 +3,7 @@
 
 ##Overview
 
-This puppet module installs and configures [Nerve](https://github.com/airbnb/nerve) as part of Airbnb's [SmartStack](http://nerds.airbnb.com/smartstack-service-discovery-cloud/)
+This puppet module installs and configures [Nerve](https://github.com/airbnb/nerve) as part of Airbnb's [SmartStack](http://nerds.airbnb.com/smartstack-service-discovery-cloud/).
 
 It allows you to dynamically register services in Zookeeper. See also [Puppet-Synapse](https://github.com/solarkennedy/puppet-synapse) to configure the [Synapse](https://github.com/airbnb/synapse) side of SmartStack: a local HAproxy that allows your services to find other services registered in zookeeper, by only needing to connect to localhost.
 
@@ -22,6 +22,13 @@ Use gem install:
  
     class { 'nerve': 
       package_provider => 'gem'
+    }
+
+Use system packages, latest, but not running:
+
+    class { 'nerve':
+      package_ensure => 'latest',
+      service_ensure => 'stopped',
     }
 
 ##Limitations
