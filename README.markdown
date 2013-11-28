@@ -67,7 +67,7 @@ zk\_hosts is an array of strings. Checks is an array of hashes.
 
 The OS support assumes that rubygem-nerve is available or `gem install nerve` is functioning. (depending on the provider you specify)
 
-TODO: Init scripts stuff
+TODO: More init script stuff (more than upstart) and rspec-system tests.
 
 ##Development
 Open an [issue](https://github.com/solarkennedy/puppet-nerve/issues) or 
