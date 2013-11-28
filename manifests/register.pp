@@ -41,7 +41,6 @@ define nerve::register (
     owner   => 'root',
     mode    => '0444',
     content => template('nerve/service.json.erb'),
-    notify  => Service['nerve']
   }
 
 }

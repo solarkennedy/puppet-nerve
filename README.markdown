@@ -41,7 +41,7 @@ See init.pp or params.pp for more fields you can override. You can do things lik
 
 These are the defaults (except for port):
 
-    nerve::service { 'service1':
+    nerve::register { 'service1':
       port           => '3000',
       target         => '/etc/nerve/conf.d/service1.json',
       host           => '127.0.0.1',

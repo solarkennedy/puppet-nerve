@@ -4,6 +4,15 @@
 #
 class nerve::config {
 
+  # TODO: something?
+  # In the case were we are using the default location
+  if $::nerve::config_file == $::nerve::params::config_file {
+    # Make the parent directory
+    file { '/etc/nerve/': 
+      ensure => 'directory',
+    }
+  }
+
   file { $::nerve::config_file:
     ensure  => 'present',
     owner   => 'root',
