@@ -6,7 +6,8 @@
 class nerve::params {
   case $::osfamily {
     'Debian','RedHat','Amazon': {
-      $package_ensure   = 'present'
+      # Right now, requires 0.3.0
+      $package_ensure   = '0.3.0'
       # Allow logic to change based on requested provider
       $package_name     = undef
       $package_provider = undef

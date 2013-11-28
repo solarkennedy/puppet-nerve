@@ -1,6 +1,8 @@
 #nerve
 [![Build Status](https://travis-ci.org/solarkennedy/puppet-nerve.png)](https://travis-ci.org/solarkennedy/puppet-nerve)
 
+# WARNING: Only works on an Nerve 3.0 (which at the time of this writing is unreleased)
+
 ##Overview
 
 This puppet module installs and configures [Nerve](https://github.com/airbnb/nerve) as part of Airbnb's [SmartStack](http://nerds.airbnb.com/smartstack-service-discovery-cloud/).
@@ -39,7 +41,7 @@ See init.pp or params.pp for more fields you can override. You can do things lik
 
 ## Registering Services
 
-These are the defaults (except for port):
+These are the defaults (Everything optional except for port):
 
     nerve::register { 'service1':
       port           => '3000',
