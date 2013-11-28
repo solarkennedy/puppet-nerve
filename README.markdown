@@ -31,6 +31,12 @@ Use system packages, latest, but not running:
       service_ensure => 'stopped',
     }
 
+See init.pp or params.pp for more fields you can override. You can do things like:
+ - instance\_id (defaults to $::fqdn)
+ - config\_file (defaults to /etc/nerve/nerve.conf.json)
+ - config\_dir  (defaults to /etc/nerve/conf.d/)
+ - etc.
+
 ##Limitations
 
 The OS support assumes that rubygem-nerve is available or `gem install nerve` is functioning. (depending on the provider you specify)
