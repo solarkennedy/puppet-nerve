@@ -1,0 +1,8 @@
+# This file maintained by Puppet!
+# nerve
+
+description	"nerve"
+
+respawn
+
+exec nerve --config <%= @config_file -%>

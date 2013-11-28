@@ -4,12 +4,21 @@
 # It ensure the service is running
 #
 class nerve::service {
-  include nerve::params
 
-  service { $nerve::params::service_name:
-    ensure     => running,
-    enable     => true,
+  # TODO: This assumes upstart. Be more compatible someday
+
+  $config_file = $nerve::config_file
+  file { '/etc/init/nerve.conf':
+    owner   => 'root',
+    group   => 'root',
+    mode    => 0444,
+    content => template('nerve/nerve.conf.upstart.erb'),
+  } ~>
+  service { 'nerve':
+    ensure     => $nerve::service_ensure,
+    enable     => $nerve::service_enable,
     hasstatus  => true,
     hasrestart => true,
   }
+
 }

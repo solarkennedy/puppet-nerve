@@ -18,7 +18,7 @@ describe 'nerve' do
 
   context 'when asked to install via gem' do
     let(:params) {{ :package_provider => 'gem', }}
-    let(:facts) {{ :osfamily => 'Debian', }}
+    let(:facts) {{ :osfamily => 'Debian' }}
     it { should contain_package('nerve').with(
       :ensure   => 'present',
       :provider => 'gem',
@@ -31,7 +31,7 @@ describe 'nerve' do
                     :package_provider => 'bla',
                     :package_name     => 'special-nerve'
     }}
-    let(:facts) {{ :osfamily => 'Debian', }}
+    let(:facts) {{ :osfamily => 'Debian' }}
     it { should contain_package('nerve').with(
       :ensure   => 'latest',
       :provider => 'bla',
@@ -41,11 +41,20 @@ describe 'nerve' do
 
   context 'when not specified how to install' do
     let(:params) {{ }}
-    let(:facts) {{ :osfamily => 'Debian', }}
+    let(:facts) {{ :osfamily => 'Debian' }}
     it { should contain_package('nerve').with(
       :ensure   => 'present',
       :provider => nil,
       :name     => 'rubygem-nerve'
+    ) }
+  end
+
+  # Service Stuff
+  context 'when requested not to run' do
+    let(:params) {{ :service_ensure => 'stopped' }}
+    let(:facts) {{ :osfamily => 'Debian' }}
+    it { should contain_service('nerve').with(
+      :ensure   => 'stopped'
     ) }
   end
 

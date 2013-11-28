@@ -12,6 +12,8 @@ class nerve::params {
       $package_provider = undef
       $service_ensure   = 'running'
       $service_enable   = true
+      $config_file      = '/etc/nerve/nerve.conf.json'
+      $config_dir       = '/etc/nerve/conf.d/'
     }
     default: {
       fail("${::operatingsystem} not supported")
