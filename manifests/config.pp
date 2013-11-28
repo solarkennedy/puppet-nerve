@@ -12,8 +12,10 @@ class nerve::config {
   }
 
   file { $::nerve::config_dir:
-    ensure => 'directory',
-    purge  => $nerve::purge_config,
+    ensure       => 'directory',
+    recurse      => true,
+    recurselimit => '1',
+    purge        => $nerve::purge_config,
   }
 
 }

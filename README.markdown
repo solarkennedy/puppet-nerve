@@ -37,6 +37,30 @@ See init.pp or params.pp for more fields you can override. You can do things lik
  - config\_dir  (defaults to /etc/nerve/conf.d/)
  - etc.
 
+## Registering Services
+
+These are the defaults (except for port):
+
+    nerve::service { 'service1':
+      port           => '3000',
+      target         => '/etc/nerve/conf.d/service1.json',
+      host           => '127.0.0.1',
+      zk_hosts       => ["localhost:2181"],
+      zk_path        => "/nerve/services/service1",
+      check_interval => '2',
+      checks         => [
+        {
+          'type' => 'http',
+          'uri'  => '/health',
+          'timeout' => '0.2',
+          'rise'    => '3',
+          'fall'    => '2'
+        }
+      ],
+    }
+
+zk\_hosts is an array of strings. Checks is an array of hashes. 
+
 ##Limitations
 
 The OS support assumes that rubygem-nerve is available or `gem install nerve` is functioning. (depending on the provider you specify)
