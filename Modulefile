@@ -1,0 +1,10 @@
+name          'KyleAnderson/nerve'
+version       '0.0.1'
+source        'https://github.com/solarkennedy/puppet-nerve'
+author        'Kyle Anderson <kyle@xkyle.com>'
+license       'Apache License, Version 2.0'
+summary       'UNKNOWN'
+description   'UNKNOWN'
+project_page  'https://github.com/solarkennedy/puppet-nerve'
+
+dependency 'puppetlabs/stdlib'
