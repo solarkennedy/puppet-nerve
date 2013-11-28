@@ -20,7 +20,7 @@ describe 'nerve' do
     let(:params) {{ :package_provider => 'gem', }}
     let(:facts) {{ :osfamily => 'Debian' }}
     it { should contain_package('nerve').with(
-      :ensure   => 'present',
+      :ensure   => '0.3.0',
       :provider => 'gem',
       :name     => 'nerve'
     ) }
@@ -43,7 +43,7 @@ describe 'nerve' do
     let(:params) {{ }}
     let(:facts) {{ :osfamily => 'Debian' }}
     it { should contain_package('nerve').with(
-      :ensure   => 'present',
+      :ensure   => '0.3.0',
       :provider => nil,
       :name     => 'rubygem-nerve'
     ) }
