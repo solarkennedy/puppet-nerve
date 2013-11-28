@@ -14,6 +14,8 @@ class nerve::params {
       $service_enable   = true
       $config_file      = '/etc/nerve/nerve.conf.json'
       $config_dir       = '/etc/nerve/conf.d/'
+      $purge_config     = true
+      $instance_id      = $::fqdn
     }
     default: {
       fail("${::operatingsystem} not supported")

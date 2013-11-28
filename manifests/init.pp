@@ -15,6 +15,8 @@ class nerve (
   $service_enable   = $nerve::params::service_enable,
   $config_file      = $nerve::params::config_file,
   $config_dir       = $nerve::params::config_dir,
+  $purge_config     = $nerve::params::purge_config,
+  $instance_id      = $nerve::params::instance_id
 ) inherits nerve::params {
 
   class { 'nerve::install': } ->
