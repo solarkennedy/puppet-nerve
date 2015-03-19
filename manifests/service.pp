@@ -13,12 +13,26 @@ class nerve::service {
     group   => 'root',
     mode    => 0444,
     content => template('nerve/nerve.conf.upstart.erb'),
-  } ~>
-  service { 'nerve':
-    ensure     => $nerve::service_ensure,
-    enable     => $nerve::service_enable,
-    hasstatus  => true,
-    hasrestart => true,
+  }
+
+  if $osfamily == 'RedHat' and $operatingsystemmajrelease == 6 {
+    service { 'nerve':
+      ensure     => $nerve::service_ensure,
+      enable     => false,
+      hasstatus  => true,
+      start      => '/sbin/initctl start nerve',
+      stop       => '/sbin/initctl stop nerve',
+      status     => '/sbin/initctl status nerve | grep "/running" 1>/dev/null 2>&1',
+      subscribe  => File['/etc/init/nerve.conf'],
+    }
+  } else {
+    service { 'nerve':
+      ensure     => $nerve::service_ensure,
+      enable     => $nerve::service_enable,
+      hasstatus  => true,
+      hasrestart => true,
+      subscribe  => File['/etc/init/nerve.conf'],
+    }
   }
 
 }
