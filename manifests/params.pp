@@ -16,6 +16,7 @@ class nerve::params {
       $config_file      = '/etc/nerve/nerve.conf.json'
       $config_dir       = '/etc/nerve/conf.d/'
       $purge_config     = true
+      $log_file         = '/var/log/nerve.log'
       $instance_id      = $::fqdn
     }
     default: {

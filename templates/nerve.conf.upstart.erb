@@ -7,4 +7,4 @@ respawn
 respawn limit 10 5
 
 # Backwards compatibility to run as nobody
-exec su -s /bin/sh -c 'exec "$0" "$@"' nobody -- nerve --config <%= @config_file %>
+exec sudo -u nobody -- nerve --config <%= @config_file %> >> <%= @log_file %> 2>&1

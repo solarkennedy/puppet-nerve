@@ -35,4 +35,17 @@ class nerve::service {
     }
   }
 
+  $log_file = $nerve::log_file
+  $nobody_group = $osfamily ? {
+    'RedHat' => 'nobody',
+    default  => 'nogroup',
+  }
+
+  file { $log_file:
+    ensure => file,
+    owner  => nobody,
+    group  => $nobody_group,
+    mode   => 660,
+  }
+
 }
