@@ -16,6 +16,7 @@ class nerve (
   $config_file      = $nerve::params::config_file,
   $config_dir       = $nerve::params::config_dir,
   $purge_config     = $nerve::params::purge_config,
+  $log_file         = $nerve::params::log_file,
   $instance_id      = $nerve::params::instance_id
 ) inherits nerve::params {
 
