@@ -19,6 +19,7 @@ class nerve::service {
     enable     => $nerve::service_enable,
     hasstatus  => true,
     hasrestart => true,
+    provider   => upstart,
   }
 
 }
