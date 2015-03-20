@@ -93,14 +93,4 @@ describe 'nerve' do
     ) }
   end
 
-  context 'unsupported operating system' do
-    describe 'nerve class without any parameters on Solaris/Nexenta' do
-      let(:facts) {{
-        :osfamily        => 'Solaris',
-        :operatingsystem => 'Nexenta'
-      }}
-
-      it { expect { should compile }.to raise_error(Puppet::Error, /Nexenta not supported/) }
-    end
-  end
 end
