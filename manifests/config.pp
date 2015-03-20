@@ -8,7 +8,7 @@ class nerve::config {
   # In the case were we are using the default location
   if $::nerve::config_file == $::nerve::params::config_file {
     # Make the parent directory
-    file { '/etc/nerve/': 
+    file { '/etc/nerve/':
       ensure => 'directory',
     }
   }
@@ -16,15 +16,15 @@ class nerve::config {
   file { $::nerve::config_file:
     ensure  => 'present',
     owner   => 'root',
-    mode    => 0444,
+    group   => 'root',
+    mode    => '0444',
     content => template('nerve/nerve.conf.json.erb'),
   }
 
   file { $::nerve::config_dir:
-    ensure       => 'directory',
-    recurse      => true,
-    recurselimit => '1',
-    purge        => $nerve::purge_config,
+    ensure  => 'directory',
+    recurse => true,
+    purge   => $nerve::purge_config,
   }
 
 }

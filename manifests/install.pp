@@ -10,13 +10,13 @@ class nerve::install {
       default:     { $package_name = 'rubygem-nerve' }
     }
   } else {
-   # Use the package name they asked for
-   $package_name = $nerve::package_name
+    # Use the package name they asked for
+    $package_name = $nerve::package_name
   }
 
   package { 'nerve':
-    name     => $package_name,
     ensure   => $nerve::package_ensure,
+    name     => $package_name,
     provider => $nerve::package_provider,
   }
 

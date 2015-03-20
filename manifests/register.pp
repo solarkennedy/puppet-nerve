@@ -11,22 +11,20 @@ define nerve::register (
   $port,
   $ensure         = 'present',
   $host           = '127.0.0.1',
-  $zk_hosts       = ["localhost:2181"],
+  $zk_hosts       = ['localhost:2181'],
   $zk_path        = "/nerve/services/${name}",
   $check_interval = '2',
   $checks         =  [
     {
-      "type"    => "http",
-      "uri"     => "/health",
-      "timeout" => '0.2',
-      "rise"    => '3',
-      "fall"    => '2'
+      'type'    => 'http',
+      'uri'     => '/health',
+      'timeout' => '0.2',
+      'rise'    => '3',
+      'fall'    => '2'
     }
   ],
   $target        = "/etc/nerve/conf.d/${name}.json"
 ) {
-
-  include stdlib
 
   validate_string($port)
   validate_string($ensure)
