@@ -8,7 +8,7 @@ describe 'nerve' do
         let(:facts) {{
           :osfamily => osfamily
         }}
-        it { should include_class('nerve::params') }
+        it { should contain_class('nerve::params') }
         it { should contain_class('nerve::install') }
         it { should contain_class('nerve::config') }
         it { should contain_class('nerve::service') }
