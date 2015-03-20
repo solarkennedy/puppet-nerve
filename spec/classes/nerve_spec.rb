@@ -100,7 +100,7 @@ describe 'nerve' do
         :operatingsystem => 'Nexenta'
       }}
 
-      it { expect { should }.to raise_error(Puppet::Error, /Nexenta not supported/) }
+      it { expect { should compile }.to raise_error(Puppet::Error, /Nexenta not supported/) }
     end
   end
 end

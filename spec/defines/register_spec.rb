@@ -35,7 +35,7 @@ describe 'nerve::register', :type => :define do
 
   describe 'When not specifying a port' do
     let (:params) {{ }}
-    it { expect { should }.to raise_error(NameError) }
+    it { expect { should compile }.to raise_error(NameError) }
   end 
 
 end # end describe
