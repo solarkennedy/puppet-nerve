@@ -1,6 +1,6 @@
 {
-  "name": "KyleAnderson/nerve",
-  "version": "0.0.5",
+  "name": "KyleAnderson-nerve",
+  "version": "0.0.7",
   "author": "Kyle Anderson <kyle@xkyle.com>",
   "summary": "This puppet module installs and configures Nerve as part of Airbnbs SmartStack",
   "license": "Apache-2.0",
