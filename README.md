@@ -1,5 +1,5 @@
 #nerve
-[![Build Status](https://travis-ci.org/solarkennedy/puppet-nerve.png)](https://travis-ci.org/solarkennedy/puppet-nerve)
+[![Build Status](https://travis-ci.org/solarkennedy/puppet-nerve.png?branch=master)](https://travis-ci.org/solarkennedy/puppet-nerve)
 
 ##Overview
 
