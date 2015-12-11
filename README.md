@@ -1,5 +1,7 @@
 #nerve
 [![Build Status](https://travis-ci.org/solarkennedy/puppet-nerve.png?branch=master)](https://travis-ci.org/solarkennedy/puppet-nerve)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/KyleAnderson/nerve.svg)](https://forge.puppetlabs.com/KyleAnderson/nerve)
+[![Puppet Forge](https://img.shields.io/puppetforge/f/KyleAnderson/nerve.svg)](https://forge.puppetlabs.com/KyleAnderson/nerve)
 
 ##Overview
 
