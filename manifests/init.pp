@@ -22,7 +22,8 @@ class nerve (
 
   class { 'nerve::install': } ->
   class { 'nerve::config': } ~>
-  class { 'nerve::service': } ->
-  Class['nerve']
-
+  ::initscript { 'nerve':
+    user    => 'nobody',
+    command => ['nerve', '--config', $config_file],
+  }
 }
