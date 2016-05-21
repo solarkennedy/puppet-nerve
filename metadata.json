@@ -11,6 +11,9 @@
     {
       "name": "puppetlabs/stdlib",
       "version_requirement": ">= 4.1.0"
+    },
+    {
+      "name": "EvanKrall/puppet-initscript"
     }
   ]
 }
