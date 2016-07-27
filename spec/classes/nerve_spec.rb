@@ -6,7 +6,8 @@ describe 'nerve' do
       describe "nerve class without any parameters on #{osfamily}" do
         let(:params) {{ }}
         let(:facts) {{
-          :osfamily => osfamily
+          :osfamily => osfamily,
+	  :operatingsystemmajrelease => '6',
         }}
         it { should contain_class('nerve::params') }
         it { should contain_class('nerve::install') }
